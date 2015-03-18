@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to "/"
     else
       flash[:alert] = "There was a problem logging you in hahahah."
-      redirect_to log_in_path
+      redirect_to "/log-in"
     end
   end
 
