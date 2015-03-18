@@ -17,6 +17,7 @@ source 'https://rubygems.org'
 
   group :test, :development do
     gem 'rspec-rails'
+    gem 'capybara'
   end
 
   group :test do
