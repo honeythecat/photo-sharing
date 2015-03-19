@@ -1,14 +1,14 @@
 <h1>Welcome to a place with photos.</h1>
 
-<%= current_user.email %>
+
 <%= form_for current_user, :url => user_path(current_user), :html => { :multipart => true } do |form| %>
   <%= form.file_field :avatar %>
   <%= form.submit %>
 <% end %>
 
-<%= image_tag current_user.avatar.url %>
-<%= image_tag current_user.avatar.url(:medium) %>
-<%= image_tag current_user.avatar.url(:thumb) %>
+<!-- <%= image_tag current_user.avatar.url %>
+<%= image_tag current_user.avatar.url(:medium) %> -->
+<h1><%= current_user.email %><span class="avatar"><%= image_tag current_user.avatar.url(:thumb) %></span></h1>
 
 <a href="/log-out">Not you?  Sign out!</a>
 <a href="/users/new">Or make new account</a>

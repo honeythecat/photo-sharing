@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :pics
   attr_accessor :password
   validates_confirmation_of :password
-  before_save :encrypt_password
+  before_create :encrypt_password
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
