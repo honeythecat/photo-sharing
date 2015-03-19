@@ -6,9 +6,8 @@
   <%= form.submit %>
 <% end %>
 
-<!-- <%= image_tag current_user.avatar.url %>
-<%= image_tag current_user.avatar.url(:medium) %> -->
 <h1><%= current_user.email %><span class="avatar"><%= image_tag current_user.avatar.url(:thumb) %></span></h1>
 
+<%= link_to "Update User", update_path(@user) %>Remove Avatar!
 <a href="/log-out">Not you?  Sign out!</a>
 <a href="/users/new">Or make new account</a>

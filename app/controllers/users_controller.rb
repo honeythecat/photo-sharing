@@ -10,16 +10,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
-    @user.avatar = nil
-    @user.save
-  end
-
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Avatar created!"
-      @user.save
+      flash[:notice] = "User updated!"
+      @user.avatar = nil
       redirect_to "/"
     else
       flash[:notice] = "An error occured!"
@@ -29,6 +24,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    redirect_to "/"
   end
 
 
